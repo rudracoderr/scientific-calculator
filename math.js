@@ -1,6 +1,9 @@
 const inputEl = document.querySelector("#input");
 
 const insert = (value) => {
+  if (inputEl.value === "Error") {
+    inputEl.value = "";
+  }
   inputEl.value += value;
 };
 
@@ -37,6 +40,10 @@ const calculate = () => {
 };
 
 const backspace = () => {
+  if (inputEl.value === "Error") {
+    inputEl.value = "";
+    return;
+  }
   inputEl.value = inputEl.value.slice(0, -1);
 };
 
